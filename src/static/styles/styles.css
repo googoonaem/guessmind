@@ -1,0 +1,1 @@
+body .gameContainer,body .loginBox{display:none;box-shadow:0 1px 3px #8e8e8e}body.loggedIn .gameContainer,body.loggedOut .loginBox{display:block}
