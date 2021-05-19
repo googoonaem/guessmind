@@ -1,0 +1,17 @@
+.chat {
+  .chat__messages {
+    li {
+      span {
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+      .you {
+        color: #000;
+      }
+      .out {
+        color: #555;
+      }
+    }
+  }
+}
