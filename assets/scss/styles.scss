@@ -1,21 +1,5 @@
 @import "variables";
 @import "pages/chat";
-
-body {
-  .loginBox,
-  .gameContainer {
-    display: none;
-    box-shadow: $box-shadow;
-  }
-
-  &.loggedOut {
-    .loginBox {
-      display: block;
-    }
-  }
-  &.loggedIn {
-    .gameContainer {
-      display: block;
-    }
-  }
-}
+@import "reset";
+@import "pages/painter";
+@import "body";

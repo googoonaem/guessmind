@@ -1,0 +1,57 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+
+  canvas {
+    margin: 40px 0px;
+    width: 500px;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 19px;
+    box-shadow: $box-shadow;
+  }
+
+  .controls {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .controls-range {
+      margin-bottom: 20px;
+    }
+    .controls-btns {
+      margin-bottom: 30px;
+      button {
+        all: unset;
+        cursor: pointer;
+        background: #fff;
+        padding: 5px 0px;
+        width: 80px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 0 5px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.07);
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        color: rgba(0, 0, 0, 0.8);
+      }
+      button:active {
+        scale: 0.87;
+      }
+    }
+    .controls-colors {
+      display: flex;
+      .controls-color {
+        margin: 0 4px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.07);
+      }
+    }
+  }
+}

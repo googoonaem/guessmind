@@ -1,5 +1,9 @@
 .chat {
   .chat__messages {
+    height: 450px;
+    overflow-y: scroll;
+    box-shadow: $box-shadow;
+    background-color: #fff;
     li {
       span {
         &:first-child {
@@ -12,6 +16,9 @@
       .out {
         color: #555;
       }
+    }
+    .chat__form {
+      margin-top: 5px;
     }
   }
 }

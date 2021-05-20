@@ -1,0 +1,22 @@
+body {
+  background-color: #f6fcf3;
+  .loginBox,
+  .gameContainer {
+    display: none;
+  }
+
+  &.loggedOut {
+    .loginBox {
+      display: block;
+    }
+  }
+  &.loggedIn {
+    .gameContainer {
+      display: block;
+      width: 850px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 0.5fr;
+    }
+  }
+}
