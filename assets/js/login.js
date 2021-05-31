@@ -25,11 +25,12 @@ if (nickname === null) {
 const handleFormSubmit = (e) => {
   e.preventDefault();
   const input = loginForm.querySelector("input");
-  const { value } = input;
+  const { value: nickname } = input;
   input.value = "";
-  localStorage.setItem(NICKNAME, value);
+  localStorage.setItem(NICKNAME, { nickname });
+  localStorage.setItem("pn", Number(new Date()));
   body.className = LOGGED_IN;
-  logIn(value);
+  logIn(nickname);
 };
 
 if (loginForm) {

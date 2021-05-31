@@ -1,9 +1,14 @@
 .chat {
+  .playerBoard {
+    height: 140px;
+    overflow-y: scroll;
+    background: $white;
+  }
   .chat__messages {
-    height: 450px;
+    height: 370px;
     overflow-y: scroll;
     box-shadow: $box-shadow;
-    background-color: #fff;
+    background-color: $white;
     li {
       span {
         &:first-child {

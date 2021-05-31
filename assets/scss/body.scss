@@ -13,10 +13,24 @@ body {
   &.loggedIn {
     .gameContainer {
       display: block;
+      position: relative;
       width: 850px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 0.5fr;
+      grid-template-areas:
+        "canvas chat"
+        "controls .";
+      grid-template-columns: 1fr 0.4fr;
+      canvas {
+        grid-area: canvas;
+        position: absolute;
+      }
+      .chat {
+        grid-area: chat;
+      }
+      .controls {
+        grid-area: controls;
+      }
     }
   }
 }
