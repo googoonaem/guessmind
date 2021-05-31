@@ -41,12 +41,10 @@ const socketController = (socket, io) => {
   socket.on(events.setNickname, ({ nickname }) => {
     socket.nickname = nickname;
     socket.userColor = randomColor();
-    socket.playerNum = localStorage.getItem("pn");
     sockets.push({
       id: socket.id,
       score: 0,
       nickname: nickname,
-      pn: socket.playerNum,
     });
     broadcast(events.newUser, { nickname });
     sendPlayerUpdate();
