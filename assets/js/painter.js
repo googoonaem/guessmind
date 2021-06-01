@@ -6,6 +6,7 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const save = document.getElementById("jsSave");
+const controls = document.getElementById("jsControls");
 
 let painting = false;
 let filling = false;
@@ -127,17 +128,31 @@ function handleContextMenu(e) {
   e.preventDefault();
 }
 
-if (canvas) {
-  canvas.addEventListener("mousemove", onMouseMove);
-  canvas.addEventListener("mousedown", startPainting);
-  canvas.addEventListener("mouseup", stopPainting);
-  canvas.addEventListener("mouseleave", stopPainting);
-  canvas.addEventListener("click", handleCanvasClick);
-  canvas.addEventListener("contextmenu", handleContextMenu);
-}
-
 export const handleBeganPath = ({ x, y }) => beginPath(x, y);
 export const handleStrokedPath = ({ x, y, color, lineWidth }) => {
   return strokePath(x, y, color, lineWidth);
 };
 export const handleFilled = ({ color }) => fill(color);
+export const disableCanvas = () => {
+  canvas.removeEventListener("mousemove", onMouseMove);
+  canvas.removeEventListener("mousedown", startPainting);
+  canvas.removeEventListener("mouseup", stopPainting);
+  canvas.removeEventListener("mouseleave", stopPainting);
+  canvas.removeEventListener("click", handleCanvasClick);
+};
+export const enableCanvas = () => {
+  canvas.addEventListener("mousemove", onMouseMove);
+  canvas.addEventListener("mousedown", startPainting);
+  canvas.addEventListener("mouseup", stopPainting);
+  canvas.addEventListener("mouseleave", stopPainting);
+  canvas.addEventListener("click", handleCanvasClick);
+};
+export const hideControls = () => (controls.style.display = "none");
+export const showControls = () => (controls.style.display = "block");
+export const resetCanvas = () => fill("#fff");
+
+if (canvas) {
+  canvas.addEventListener("contextmenu", handleContextMenu);
+  disableCanvas();
+  hideControls();
+}

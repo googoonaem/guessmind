@@ -27,9 +27,17 @@ const handleFormSubmit = (e) => {
   const input = loginForm.querySelector("input");
   const { value: nickname } = input;
   input.value = "";
-  localStorage.setItem(NICKNAME, { nickname });
-  body.className = LOGGED_IN;
-  logIn(nickname);
+  if (nickname === "Bot") {
+    let div = document.createElement("div");
+    div.classList.add("loginAlarm");
+    div.innerText = "This name cannot be entered. Please use a different name.";
+    body.appendChild(div);
+    setTimeout(() => div.remove(), 1000);
+  } else {
+    localStorage.setItem(NICKNAME, { nickname });
+    body.className = LOGGED_IN;
+    logIn(nickname);
+  }
 };
 
 if (loginForm) {
